@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"   
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:focusableInTouchMode="true" >
+  
+    <RelativeLayout
+    android:id="@+id/RelativeLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background2"
+    android:padding="15dp" >
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="5dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name" />
+
+            <EditText
+                android:id="@+id/cache_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+        		android:inputType="textCapSentences"
+        		android:imeOptions="actionDone"        
+       			android:hint="Enter a name for your Cache"  />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type" />
+
+            <Spinner
+                android:id="@+id/spinner_cache_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/type_array"
+                android:prompt="@string/type_prompt"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Difficulty" />
+
+            <Spinner
+                android:id="@+id/_spinner_cache_difficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/difficulty_array" 
+                android:prompt="@string/difficulty_prompt" />
+        </TableRow>
+    </TableLayout>
+
+    <ImageButton
+        android:id="@+id/gps"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tableLayout1"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/gps1" />
+
+    <TextView
+        android:id="@+id/lattitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/gps"
+        android:layout_toRightOf="@+id/gps"
+         android:layout_marginLeft="5dp"
+        android:text="0.0"
+        android:ems="10" >       
+    </TextView>
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lattitude"
+        android:layout_toRightOf="@+id/gps"
+        android:layout_marginLeft="5dp"
+        android:text="0.0"
+        android:ems="10" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/treasure" />
+
+    <ToggleButton
+        android:id="@+id/found_it"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="Found it"
+        android:textOff="Click if you found it"
+        android:textOn="Found it!!" > 
+     
+      </ToggleButton>
+
+    <TextView
+        android:id="@+id/distancelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/found_it"
+        android:layout_below="@+id/found_it"
+        android:layout_marginTop="16dp"
+        android:text="Distance (meters)" />
+
+    <TextView
+        android:id="@+id/cache_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/distancelabel"        
+        android:layout_toRightOf="@+id/distancelabel"
+        android:layout_marginLeft="4dp"
+        android:ems="10" >       
+    </TextView>   
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minLines="2"
+        android:layout_below="@+id/gps"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:ellipsize="middle"
+        android:hint="@string/description_hint" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/text_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignBottom="@+id/description"
+        android:layout_alignLeft="@+id/description"
+        android:text="Hint" />
+
+  </RelativeLayout>
+
+</ScrollView>
